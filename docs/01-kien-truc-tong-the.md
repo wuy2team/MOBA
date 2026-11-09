@@ -358,6 +358,15 @@ F:\MA\                                  (gốc dự án)
 ├── vite.config.ts · eslint.config.js · .prettierrc · .gitignore
 ```
 
+### 7.1 Điều chỉnh khi hiện thực (Giai đoạn 01)
+
+| Thay đổi | Lý do |
+|---------|-------|
+| `IsoProjection` đặt ở `src/shared/math/iso.ts` (thay vì `game/phaser/render/IsoProjector.ts`) | Cả lớp Phaser và Minimap phía React (GĐ 03) đều cần phép chiếu, nên đặt ở `shared` để không phải viết lại |
+| Thêm `src/bridge/gameContracts.ts` (`GameHandle`, `GameFactory`) và `src/bridge/useGameEvent.ts` | Tách hợp đồng giữa `GameHost` và `createGame`, nhờ đó test được `GameHost` mà không cần Phaser. Hook đăng ký sự kiện dùng `useEffectEvent` |
+| Màn hình `arena` (`ArenaScreen` + `ArenaPreviewScene`) | Là màn trận thử nghiệm của GĐ 01; GĐ 03 sẽ thay bằng `MatchScreen` + `MatchScene` |
+| Phaser import bằng `import * as Phaser from 'phaser'` | Bản ESM của Phaser 3.90 không có default export |
+
 ## 8. Quy ước code
 
 | Chủ đề | Quy ước |

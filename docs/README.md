@@ -3,7 +3,7 @@
 > MOBA 5v5 chạy hoàn toàn trên trình duyệt · React + TypeScript + Vite + Phaser 3 + Tailwind CSS + Zustand
 > Không Backend · Không Database · Không API bên ngoài · Deploy dạng website tĩnh
 
-**Trạng thái hiện tại:** Giai đoạn 00 – Phân tích & Kiến trúc: **đã xong tài liệu**. Chưa có mã nguồn.
+**Trạng thái hiện tại:** Giai đoạn 01 – Khởi tạo dự án: **hoàn thành** (xem [qa/phase-01.md](qa/phase-01.md)). Tiếp theo: Giai đoạn 02.
 **Cập nhật lần cuối:** 2026-11-09
 
 ## Mục lục tài liệu
@@ -25,7 +25,7 @@ Cập nhật bảng này khi kết thúc mỗi giai đoạn (sau bước Review 
 | GĐ | Tên | Trạng thái | Ghi chú |
 |----|-----|-----------|---------|
 | 00 | Phân tích & kế hoạch | ✅ Xong | Tài liệu trong `docs/` |
-| 01 | Khởi tạo dự án | ⬜ Chưa làm | |
+| 01 | Khởi tạo dự án | ✅ Xong | Phaser 3.90, TS 6.0, Vite 8, React 19, Tailwind 4. JS ban đầu 74.8 KB gzip |
 | 02 | Giao diện (các màn hình) | ⬜ | |
 | 03 | Bản đồ isometric | ⬜ | |
 | 04 | Hệ thống tướng | ⬜ | |

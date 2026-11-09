@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+
+/* Theme Fantasy MOBA: xanh đậm – tím – vàng kim. */
+@theme {
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+  --font-logo: 'Cinzel', 'Be Vietnam Pro', serif;
+
+  --color-night-950: #070a1a;
+  --color-night-900: #0b1026;
+  --color-night-800: #121a3a;
+  --color-night-700: #1b2550;
+  --color-night-600: #26336a;
+
+  --color-arcane-800: #2a1a5c;
+  --color-arcane-700: #3b2378;
+  --color-arcane-500: #6d3fd1;
+  --color-arcane-300: #b79cff;
+
+  --color-gold-200: #fff0c2;
+  --color-gold-300: #ffe08a;
+  --color-gold-400: #f5c451;
+  --color-gold-500: #d9a03a;
+  --color-gold-700: #8a5a17;
+
+  --color-team-blue: #4fb3ff;
+  --color-team-red: #ff5a5f;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shine: shine 3.5s linear infinite;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes shine {
+    from {
+      background-position: -200% center;
+    }
+    to {
+      background-position: 200% center;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-night-950);
+    color: #e9e6f7;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-400);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Chữ vàng kim có ánh sáng chạy qua – dùng cho logo và tiêu đề lớn. */
+  .text-gold-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-gold-500) 0%,
+      var(--color-gold-200) 25%,
+      var(--color-gold-400) 50%,
+      var(--color-gold-200) 75%,
+      var(--color-gold-500) 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
